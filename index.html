@@ -1,45 +1,25 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Poo2-trab03 by HannaTatila</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Poo2-trab03</h1>
+      <h2 class="project-tagline">Trabalho03 da disciplina de POO2 - Criação do game Mar&amp;moto.</h2>
+      <a href="https://github.com/HannaTatila/POO2-Trab03" class="btn">View on GitHub</a>
+      <a href="https://github.com/HannaTatila/POO2-Trab03/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/HannaTatila/POO2-Trab03/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-      <header>
-        <h1>Poo2-trab03</h1>
-        <p>Trabalho03 da disciplina de POO2 - Criação do game Mar&amp;moto.</p>
-      </header>
-
-      <div id="banner">
-        <span id="logo"></span>
-
-        <a href="https://github.com/HannaTatila/POO2-Trab03" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/HannaTatila/POO2-Trab03/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/HannaTatila/POO2-Trab03/tarball/master" class="button">TAR</a></li>
-          </ul>
-        </div>
-      </div><!-- end banner -->
-
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
-        <h2>
+    <section class="main-content">
+      <h2>
 <a id="trabalho-de-poo2" class="anchor" href="#trabalho-de-poo2" aria-hidden="true"><span class="octicon octicon-link"></span></a>
 <b>Trabalho de POO2</b> </h2>
 
@@ -192,10 +172,15 @@ A última versão teve os padrões Flyweight, Singleton e Adapter implementados.
 <a id="7-guia-do-jogador" class="anchor" href="#7-guia-do-jogador" aria-hidden="true"><span class="octicon octicon-link"></span></a>
 <b>7. Guia do jogador</b> </h4>
 
+<p><br>
+<em>(* Para implementação do jogo foi utilizado o Python 3.4 *)</em></p>
+
 <ul>
 <li>O jogo é todo controlado por comandos do teclado; </li>
-<li>Ao iniciar, o jogo apresenta uma tela de menu. Apenas as funcionalidades “INICIAR” e “SAIR” já estão devidamente implementadas;</li>
+<li>Ao iniciar, o jogo apresenta uma tela de menu. Apenas as funcionalidades “INICIAR”, "CADASTRAR" e “SAIR” já estão devidamente implementadas;</li>
 <li>Navegue pelos itens do menu utilizando as setas do teclado para cima e para baixo. Para a cessar as funcionalidades, utilize a tecla Enter;</li>
+<li>Para iniciar o jogo é preciso ter um login devidamente cadastrado. Para isso acesse a opção CADASTRAR. Digite seu login e tecle Enter. Digite sua senha e tecle Enter;</li>
+<li>Para jogar, acesse a opção Jogar. Digite seu login e senha cadastrado e tecle Enter;</li>
 <li>Para movimentar o peixinho, utilize a seta para cima (você pode apertar e segurar a tecla para o peixinho se movimentar mais rápido);</li>
 <li>Se o peixinho encostar em algum inimigo que surgir em seu caminho, terá uma vida descontada (a vida é representada pelas gotinhas no canto superior esquerdo da tela). Caso perca três vidas o jogo será finalizado;</li>
 <li>No canto superior esquerdo é possível observar o 'Score' da fase, que é incrementado toda vez que o peixinho consegue ultrapassar um obstáculo.</li>
@@ -204,13 +189,15 @@ A última versão teve os padrões Flyweight, Singleton e Adapter implementados.
 
 <p><br>
 <br></p>
-      </section>
-      <footer>
-        <p>Project maintained by <a href="https://github.com/HannaTatila">HannaTatila</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/HannaTatila/POO2-Trab03">Poo2-trab03</a> is maintained by <a href="https://github.com/HannaTatila">HannaTatila</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+
+    </section>
+
+  
   </body>
 </html>
