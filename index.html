@@ -60,7 +60,7 @@
 <a id="1-introdução" class="anchor" href="#1-introdu%C3%A7%C3%A3o" aria-hidden="true"><span class="octicon octicon-link"></span></a>
 <b>1. Introdução</b> </h4>
 
-<p>Este documento tem como objetivo apresentar o trabalho proposto na disciplina de Programação Orientada a Objetos 2 e está organizado da seguinte forma: a Seção 2 contém uma descrição do propósito do sistema; a Seção 3 apresenta uma descrição do minimundo apresentando o problema; a Seção 4 apresenta o Diagrama de Classe; a Seção 5 apresenta o Diagrama de Projeto; a Seção 6 apresenta as informações do Sistema Sonar; a Seção 7 contém um Guia do jogador que descreve como o jogo funciona.<br>
+<p> Este documento tem como objetivo apresentar o trabalho proposto na disciplina de Programação Orientada a Objetos 2 e está organizado da seguinte forma: a Seção 2 contém uma descrição do propósito do sistema; a Seção 3 apresenta uma descrição do minimundo apresentando o problema; a Seção 4 apresenta o Diagrama de Classe; a Seção 5 apresenta o Diagrama de Projeto; a Seção 6 apresenta as informações do Sistema Sonar; a Seção 7 contém um Guia do jogador que descreve como o jogo funciona.<br>
 <br></p>
 
 <h4>
@@ -95,19 +95,64 @@
 <br></p>
 
 <h4>
-<a id="5-diagrama-de-projeto" class="anchor" href="#5-diagrama-de-projeto" aria-hidden="true"><span class="octicon octicon-link"></span></a>
-<b>5. Diagrama de Projeto</b> </h4>
+<a id="5padrões-de-projeto" class="anchor" href="#5padr%C3%B5es-de-projeto" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<b>5.Padrões de Projeto</b> </h4>
 
 <p><br>
-<b>5.1 Padrão Fábrica</b> 
+<b>5.1 Padrão Método Fábrica</b> 
 <br>
 <br>
-<img src="https://github.com/HannaTatila/POO2-Trab1/blob/gh-pages/DiagramaProjeto_Mar&amp;moto.png?raw=true" alt="">
+<img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaFabrica.png?raw=true" alt="">
 <br>
 <br>
- Por enquanto apenas o Método Fábrica foi implementado para abstrair a criação dos objetos de Obstáculos.
+ O padrão Método Fábrica possui a intenção de definir uma interface para criar um objeto, mas deixar as subclasses decidirem que classe instanciar. O Método Fábrica permite adiar a instanciação para subclasses.
+No jogo foi criada uma FabricaSprites para abstrair a criação dos obstáculos e do personagem.
 <br>
- Nesse diagrama também é possível observar parte da aplicação do padrão MVC. Foram criadas 3 camadas principais:</p>
+<br>
+<b>5.2 Padrão Protótipo</b> 
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaPrototipo.png?raw=true" alt="">
+<br>
+<br>
+ A intenção do padrão Protótipo é especificar tipos de objetos a serem criados usando uma instância protótipo e criar novos objetos pela cópia desse protótipo.
+Precisamos criar novos objetos a partir de uma instância protótipo, que vai realizar uma cópia de si mesmo e retornar para o novo objeto.
+Como o jogo cria vários obstáculos durante uma partida, seria bem mais custoso instanciar toda vez um novo objeto. Aplicando esse padrão, a partir de uma instância de um ObstáculoProtótipo é possível criar vários obstáculos a partir da cópia deste ObstáculoProtótipo.
+<br>
+<br>
+<b>5.3 Padrão Flyweight</b> 
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaFlyweight.png?raw=true" alt="">
+<br>
+<br>
+ A intenção do padrão Flyweight é usar compartilhamento para suportar eficientemente grandes quantidades de objetos de granularidade fina. No jogo em questão, o padrão foi aplicado para o compartilhamento de imagens entre as entidades. A FlyweightFabrica é instanciada, por enquanto, apenas uma vez e nela todas as imagens dos obstáculos e do personagem são carregadas de seus respectivos diretórios. Quando um método requisitar essas imagens (o que acontece várias vezes durante o jogo, já que vários obstáculos são impressos durante uma partida), elas já estarão carregadas e só terão que ser impressas na tela.
+<br>
+<br>
+<b>5.4 Padrão Singleton</b> 
+<br>
+<br>
+ A solução implementada pelo padrão Flyweight é bem intuitiva. No entanto vale a pena comentar alguns detalhes. Na classe FlyweightFbrica fica centralizado o acesso a todos os objetos compartilhados. O que aconteceria se houvessem duas ou mais instâncias desta classe? Seriam criados vários objetos, sem nenhuma necessidade. Se eu criasse, por exemplo, uma outra AplJogo para utilizar outro módulo de jogo que também fizesse uso do FlyweightFabrica, esses novos objetos seriam criados desnecessariamente.
+Para evitar este problema foi implementado o padrão Singleton. Aplicando este padrão na classe fábrica, garantimos que apenas uma instância dela será utilizada em todo o projeto.
+<br>
+<br>
+<b>5.5 Padrão Adapter</b> 
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaAdapter.png?raw=true" alt="">
+<br>
+<br>
+ A intenção do padrão Adapter é converter a interface de uma classe em outra interface, esperada pelo cliente. O Adapter permite que interfaces incompatíveis trabalhem em conjunto – o que, de outra forma, seria impossível.
+No caso do jogo, a TelaLogin fez uso da interface de TelaCadastro, pois elas possuem em grande parte um mesmo comportamento, possuindo, atualmente, apenas um método diferente. Portanto, para evitar replicação de código e fazer aproveitamento de interface, a TelaLogin fez uso de herança de TelaCadastro.
+<br>
+<br>
+<b>6. MVC</b> 
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaCamadas.png?raw=true" alt="">
+<br>
+<br>
+Foram criadas 4 camadas principais:</p>
 
 <ul>
 <li>
@@ -115,58 +160,40 @@
 <li>
 <b>CLN:</b> representa a camada de lógica de negócio. Possui duas outras camadas chamadas CGT, que possui um APLJogo e a classe referente à aplicação do Método Fábrica; e CDP, que possui as classes que representam as entidades principais do sistema.</li>
 <li>
+<b>CGD:</b> representa a camada de persistência. Possui a classe DAOJogador que é responsável por executar ações no banco de dados.</li>
+<li>
 <b>PRINCIPAL:</b> possui apenas o módulo main do sistema.</li>
 </ul>
 
-<p><br>
-<b>5.2 Padrão Flyweight</b> 
-<br>
-<br>
-<img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaFlyweight.png?raw=true" alt="">
-<br>
-<br>
-A intenção do padrão Flyweight é usar compartilhamento para suportar eficientemente grandes quantidades de objetos de granularidade fina. No jogo em questão, o padrão foi aplicado para o compartilhamento de imagens entre as entidades. A FlyweightFabrica é instanciada, por enquanto, apenas uma vez e nela todas as imagens dos obstáculos e do personagem são carregadas de seus respectivos diretórios. Quando um método requisitar essas imagens (o que acontece várias vezes durante o jogo, já que vários obstáculos são impressos durante uma partida), elas já estarão carregadas e só terão que ser impressas na tela.
-<br>
-<br>
-<b>5.3 Padrão Singleton</b> 
-<br>
-<br>
-A solução implementada pelo padrão Flyweight é bem intuitiva. No entanto vale a pena comentar alguns detalhes. Na classe FlyweightFbrica fica centralizado o acesso a todos os objetos compartilhados. O que aconteceria se houvessem duas ou mais instâncias desta classe? Seriam criados vários objetos, sem nenhuma necessidade. Se eu criasse, por exemplo, uma outra AplJogo para utilizar outro módulo de jogo que também fizesse uso do FlyweightFabrica, esses novos objetos seriam criados desnecessariamente.
-Para evitar este problema foi implementado o padrão Singleton. Aplicando este padrão na classe fábrica, garantimos que apenas uma instância dela será utilizada em todo o projeto.
-<br>
-<br>
-<b>5.4 Padrão Adapter</b> 
-<br>
-<br>
-<img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaAdapter.png?raw=true" alt="">
-<br>
-<br>
-A intenção do padrão Adapter é converter a interface de uma classe em outra interface, esperada pelo cliente. O Adapter permite que interfaces incompatíveis trabalhem em conjunto – o que, de outra forma, seria impossível.
-No caso do jogo, a TelaLogin fez uso da interface de TelaCadastro, pois elas possuem em grande parte um mesmo comportamento, possuindo, atualmente, apenas um método diferente. Portanto, para evitar replicação de código e fazer aproveitamento de interface, a TelaLogin fez uso de herança de TelaCadastro.
-<br>
-<br>
-<b>5.5 Padrão Protótipo</b> 
-<br>
-<br>
-<img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaPrototipo.png?raw=true" alt="">
-<br>
-<br>
-A intenção do padrão Protótipo é especificar tipos de objetos a serem criados usando uma instância protótipo e criar novos objetos pela cópia desse protótipo.
-Precisamos criar novos objetos a partir de uma instância protótipo, que vai realizar uma cópia de si mesmo e retornar para o novo objeto.
-Como o jogo cria vários obstáculos durante uma partida, seria bem mais custoso instanciar toda vez um novo objeto. Aplicando esse padrão, a partir de uma instância de um ObstáculoProtótipo é possível criar vários obstáculos a partir da cópia deste ObstáculoProtótipo.
-<br>
-<br>
-<b>5.5 Padrão Protótipo</b> 
+<p>Além disso existem os diretórios de Recursos, que possuem as imagens e os áudios; e o diretório de testes.
 <br>
 <br></p>
 
 <h4>
-<a id="6-sonar" class="anchor" href="#6-sonar" aria-hidden="true"><span class="octicon octicon-link"></span></a>
-<b>6. SONAR</b> </h4>
+<a id="7-teste-de-qualidade-de-cÓdigo" class="anchor" href="#7-teste-de-qualidade-de-c%C3%93digo" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<b>7. TESTE DE QUALIDADE DE CÓDIGO</b> </h4>
 
 <p><br>
+<br>
+O teste de qualidade do código foi obtida por meio do software SonarQube. A figura 1 mostra os resultados da primeira análise feita no código. Essa versão possui apenas o Método Fábrica implementado.
+<br>
 <img src="https://github.com/HannaTatila/POO2-Trab1/blob/gh-pages/sonar.png?raw=true" alt="">
 <br>
+<br></p>
+
+<p><br>
+<br></p>
+
+<p><br>
+<br></p>
+
+<p><br>
+<br></p>
+
+<p><br>
+<br></p>
+
+<p><br>
 <br></p>
 
 <h4>
