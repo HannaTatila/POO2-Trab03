@@ -132,7 +132,7 @@ Como o jogo cria vários obstáculos durante uma partida, seria bem mais custoso
 <b>5.4 Padrão Singleton</b> 
 <br>
 <br>
- A solução implementada pelo padrão Flyweight é bem intuitiva. No entanto vale a pena comentar alguns detalhes. Na classe FlyweightFbrica fica centralizado o acesso a todos os objetos compartilhados. O que aconteceria se houvessem duas ou mais instâncias desta classe? Seriam criados vários objetos, sem nenhuma necessidade. Se eu criasse, por exemplo, uma outra AplJogo para utilizar outro módulo de jogo que também fizesse uso do FlyweightFabrica, esses novos objetos seriam criados desnecessariamente.
+ A solução implementada pelo padrão Flyweight é bem intuitiva. No entanto, na classe FlyweightFabrica fica centralizado o acesso a todos os objetos compartilhados. O que aconteceria se houvessem duas ou mais instâncias desta classe? Seriam criados vários objetos, sem nenhuma necessidade. Se eu criasse, por exemplo, uma outra AplJogo para utilizar outro módulo de jogo que também fizesse uso do FlyweightFabrica, esses novos objetos seriam criados desnecessariamente.
 Para evitar este problema foi implementado o padrão Singleton. Aplicando este padrão na classe fábrica, garantimos que apenas uma instância dela será utilizada em todo o projeto.
 <br>
 <br>
