@@ -30,24 +30,27 @@
 <br></p>
 
 <h4>
-<a id="1-introdução" class="anchor" href="#1-introdu%C3%A7%C3%A3o" aria-hidden="true"><span class="octicon octicon-link"></span></a>
-<b>1. Introdução</b> </h4>
+<a id="1-sumário" class="anchor" href="#1-sum%C3%A1rio" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<b>1. Sumário</b> </h4>
 
-<p> Este documento tem como objetivo apresentar o trabalho proposto na disciplina de Programação Orientada a Objetos 2 e está organizado da seguinte forma: a Seção 2 contém uma descrição do propósito do sistema; a Seção 3 apresenta uma descrição do minimundo apresentando o problema; a Seção 4 apresenta o Diagrama de Classe; a Seção 5 apresenta o Diagrama de Projeto; a Seção 6 apresenta as informações do Sistema Sonar; a Seção 7 contém um Guia do jogador que descreve como o jogo funciona.<br>
-<br></p>
-
+<ul>
+<li>Descrição do propósito do sistema</li>
+<li>Minimundo</li>
+<li>Diagrama de Classe</li>
+<li>Padrões de Projeto</li>
+<li>MVC</li>
+<li>Teste de qualidade de código</li>
+<li>Guia do jogador
+<br>
 <h4>
 <a id="2-descrição-do-propósito-do-sistema" class="anchor" href="#2-descri%C3%A7%C3%A3o-do-prop%C3%B3sito-do-sistema" aria-hidden="true"><span class="octicon octicon-link"></span></a>
 <b>2. Descrição do Propósito do Sistema</b> </h4>
-
-<p> O sistema se trata de um jogo de distância que contém vários desafios e convida o usuário a percorrer longas distâncias, marcando muitos pontos. O jogo é sem fim, não possui níveis. A única finalidade é percorrer o maior número de distância possível, não ser atingido pelos obstáculos e coletar os bônus disponíveis na fase.<br>
-<br></p>
-
+ O sistema se trata de um jogo de distância que contém vários desafios e convida o usuário a percorrer longas distâncias, marcando muitos pontos. O jogo é sem fim, não possui níveis. A única finalidade é percorrer o maior número de distância possível, não ser atingido pelos obstáculos e coletar os bônus disponíveis na fase.<br>
+<br>
 <h4>
 <a id="3-descrição-do-minimundo" class="anchor" href="#3-descri%C3%A7%C3%A3o-do-minimundo" aria-hidden="true"><span class="octicon octicon-link"></span></a>
 <b>3. Descrição do Minimundo</b> </h4>
-
-<p> A empresa desenvolvedora de jogos HTSGames precisa criar um novo jogo que prenda a atenção e desafie seus jogadores. Pensando nisso, a HTSGames planeja criar um jogo de distância.<br>
+ A empresa desenvolvedora de jogos HTSGames precisa criar um novo jogo que prenda a atenção e desafie seus jogadores. Pensando nisso, a HTSGames planeja criar um jogo de distância.<br>
 <br>
  Esse jogo possui como personagem principal um adorável peixinho montado em sua moto radical. O peixinho precisa desviar de vários obstáculos marinhos que aparecem em seu caminho. A cada obstáculo ultrapassado, a pontuação é incrementada. Sendo que o personagem possui três vidas iniciais. A cada vez que é atingido por um obstáculo, o personagem perde uma vida. Se todas as vidas forem perdidas, o jogo é finalizado. Ao decorrer do jogo, aparecerão bônus que podem ser coletados e transformados em habilidades ou uma nova vida. Essas habilidades podem ser: escudo ou estrelinha.<br>
 <br>
@@ -56,22 +59,18 @@
  O jogador terá a possibilidade de consultar o ranking do jogo, que exibe, ordenadamente, a pontuação de cada jogador.<br>
 <br>
  Nota: Por enquanto o jogo só possui as funcionalidades básicas. O personagem precisa fugir dos obstáculos que surgem em seu caminho. Caso atinja um obstáculo, perde uma vida. Futuramente, o jogo será incrementado e terá as outras funcionalidades sugeridas implementadas.<br>
-<br></p>
-
+<br>
 <h4>
 <a id="4-diagrama-de-classe" class="anchor" href="#4-diagrama-de-classe" aria-hidden="true"><span class="octicon octicon-link"></span></a>
 <b>4. Diagrama de Classe</b> </h4>
-
-<p><br>
+<br>
 <img src="https://github.com/HannaTatila/POO2-Trab1/blob/gh-pages/DiagramaClasse_Mar&amp;moto.png?raw=true" alt="">
 <br>
-<br></p>
-
+<br>
 <h4>
 <a id="5padrões-de-projeto" class="anchor" href="#5padr%C3%B5es-de-projeto" aria-hidden="true"><span class="octicon octicon-link"></span></a>
 <b>5.Padrões de Projeto</b> </h4>
-
-<p><br>
+<br>
 <b>5.1 Padrão Método Fábrica</b> 
 <br>
 <br>
@@ -115,14 +114,15 @@ Para evitar este problema foi implementado o padrão Singleton. Aplicando este p
  O padrão de projeto DAO nos permite separar a lógica de negócios da lógica de persistência de dados. Então foi criada uma classe DAOJogador que ficou responsável por trocar informações com o SGBD e fornecer operações de consulta e inserção de dados referentes ao cadastro e validação de dados do jogador.
 <br>
 <br>
-<b>6. MVC</b> 
+<h4>
+<a id="6-mvc" class="anchor" href="#6-mvc" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<b>6. MVC</b> </h4>
 <br>
 <br>
 <img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaCamadas.png?raw=true" alt="">
 <br>
 <br>
-Foram criadas 4 camadas principais:</p>
-
+Foram criadas 4 camadas principais:
 <ul>
 <li>
 <b>CIU:</b> representa a camada de visão. Possui duas outras camadas chamadas CIH, que possui classes referentes às telas (impressão das imagens, textos); e CCI, que possui os controladores do jogo e do menu. </li>
@@ -133,16 +133,13 @@ Foram criadas 4 camadas principais:</p>
 <li>
 <b>PRINCIPAL:</b> possui apenas o módulo main do sistema.</li>
 </ul>
-
-<p>Além disso existem os diretórios de Recursos, que possuem as imagens e os áudios; e o diretório de testes.
+Além disso existem os diretórios de Recursos, que possuem as imagens e os áudios; e o diretório de testes.
 <br>
-<br></p>
-
+<br>
 <h4>
 <a id="7-teste-de-qualidade-de-cÓdigo" class="anchor" href="#7-teste-de-qualidade-de-c%C3%93digo" aria-hidden="true"><span class="octicon octicon-link"></span></a>
 <b>7. TESTE DE QUALIDADE DE CÓDIGO</b> </h4>
-
-<p><br>
+<br>
 <br>
 O teste de qualidade do código foi obtida por meio do software SonarQube. A figura 1 mostra os resultados da primeira análise feita no código. Essa versão possui apenas o Método Fábrica implementado.
 <br>
@@ -166,15 +163,12 @@ A última versão teve os padrões Flyweight, Singleton e Adapter implementados.
 <br>
 <img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/sonarU.png?raw=true" alt="">
 <br>
-<br></p>
-
+<br>
 <h4>
 <a id="7-guia-do-jogador" class="anchor" href="#7-guia-do-jogador" aria-hidden="true"><span class="octicon octicon-link"></span></a>
 <b>7. Guia do jogador</b> </h4>
-
-<p><br>
-<em>(* Para implementação do jogo foi utilizado o Python 3.4 *)</em></p>
-
+<br>
+<em>(* Para implementação do jogo foi utilizado o Python 3.4 *)</em>
 <ul>
 <li>O jogo é todo controlado por comandos do teclado; </li>
 <li>Ao iniciar, o jogo apresenta uma tela de menu. Apenas as funcionalidades “INICIAR”, "CADASTRAR" e “SAIR” já estão devidamente implementadas;</li>
@@ -186,9 +180,10 @@ A última versão teve os padrões Flyweight, Singleton e Adapter implementados.
 <li>No canto superior esquerdo é possível observar o 'Score' da fase, que é incrementado toda vez que o peixinho consegue ultrapassar um obstáculo.</li>
 <li>Para abortar o jogo a qualquer momento, utilize a tecla de espaço.</li>
 </ul>
-
-<p><br>
-<br></p>
+<br>
+<br>
+</li>
+</ul>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/HannaTatila/POO2-Trab03">Poo2-trab03</a> is maintained by <a href="https://github.com/HannaTatila">HannaTatila</a>.</span>
